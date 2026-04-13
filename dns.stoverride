@@ -19,24 +19,8 @@ dns: #!replace
     - https://dns.google/dns-query
     - https://1.1.1.1/dns-query
 
-#  # 3. 定向分流策略：确保国内流量不发往国外 DNS
-#  # 解决“国内网站在国外 DNS 没记录”或解析慢的问题
-#  nameserver-policy:
-#    "geosite:cn": [223.5.5.5, 119.29.29.29]
-#    "geosite:apple,microsoft": [https://dns.alidns.com/dns-query]
-#    "geosite:category-ads-all": [127.0.0.1] # 可选：初步拦截广告解析
-
-  # 4. 节点解析服务器：专门用于解析代理服务器的 IP 地址
+  # 3. 节点解析服务器：专门用于解析代理服务器的 IP 地址
   # 防止因 DNS 故障导致无法连接代理节点
   proxy-server-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-
-#  # 5. 判定补丁：如果国内 DNS 解析出了国外 IP，强制丢弃并使用 fallback (此处作为双重保险)
-#  fallback:
-#    - https://dns.cloudflare.com/dns-query
-#  fallback-filter:
-#    geoip: true
-#    geoip-code: CN
-#    ipcidr:
-#      - 240.0.0.0/4
