@@ -15,6 +15,7 @@ dns: #!replace
   # 2. 默认解析服务器：处理所有未匹配的域名（主要是国外/被污染域名）
   # 采用加密 DNS 确保隐私
   nameserver:
+    - https://dns.alidns.com/dns-query
     - https://dns.google/dns-query
     - https://1.1.1.1/dns-query
 
