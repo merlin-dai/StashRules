@@ -1,1 +1,41 @@
+name: 防 DNS 泄漏 & 国内加速 DNS
+desc: 彻底替换原订阅 DNS 模块，实现国内外分流并修复解析漏洞
 
+dns: #!replace
+  enable: true
+  ipv6: false                      # 核心防泄漏：关闭 IPv6
+  enhanced-mode: fake-ip           # 核心防泄漏：使用虚拟 IP 机制
+  fake-ip-range: 198.18.0.1/16
+  
+  # 1. 基础解析服务器：仅用于解析 DoH 域名及节点域名
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  # 2. 默认解析服务器：处理所有未匹配的域名（主要是国外/被污染域名）
+  # 采用加密 DNS 确保隐私
+  nameserver:
+    - https://dns.google/dns-query
+    - https://1.1.1.1/dns-query
+
+  # 3. 定向分流策略：确保国内流量不发往国外 DNS
+  # 解决“国内网站在国外 DNS 没记录”或解析慢的问题
+  nameserver-policy:
+    "geosite:cn": [223.5.5.5, 119.29.29.29]
+    "geosite:apple,microsoft": [https://dns.alidns.com/dns-query]
+    "geosite:category-ads-all": [127.0.0.1] # 可选：初步拦截广告解析
+
+  # 4. 节点解析服务器：专门用于解析代理服务器的 IP 地址
+  # 防止因 DNS 故障导致无法连接代理节点
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+#  # 5. 判定补丁：如果国内 DNS 解析出了国外 IP，强制丢弃并使用 fallback (此处作为双重保险)
+#  fallback:
+#    - https://dns.cloudflare.com/dns-query
+#  fallback-filter:
+#    geoip: true
+#    geoip-code: CN
+#    ipcidr:
+#      - 240.0.0.0/4
