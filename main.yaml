@@ -21,16 +21,16 @@ proxy-groups:
 # 这里定义的是规则集的下载与更新行为，Stash 会根据这里的配置去抓取 payload
 rule-providers:
   local: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/local.yaml"}
-#  apple: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/apple.yaml"}
-#  microsoft: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/microsoft.yaml"}
-#  cn-domain: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-domain.yaml"}
-#  google: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/google.yaml"}
-#  amazon: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/amazon.yaml"}
-#  proxy: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/proxy.yaml"}
-#  not-hk: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/not-hk.yaml"}
-#  adblock: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/adblock.yaml"}
-#  reject: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/reject.yaml"}
-#  cn-ip: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-ip.yaml"}
+  apple: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/apple.yaml"}
+  microsoft: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/microsoft.yaml"}
+  cn-domain: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-domain.yaml"}
+  google: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/google.yaml"}
+  amazon: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/amazon.yaml"}
+  proxy: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/proxy.yaml"}
+  not-hk: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/not-hk.yaml"}
+  adblock: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/adblock.yaml"}
+  reject: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/reject.yaml"}
+  cn-ip: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-ip.yaml"}
 
 # ---------------------------------------------------
 # 3. 规则 (Rules)
