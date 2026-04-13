@@ -19,42 +19,42 @@ proxy-groups:
 # 2. 规则集配置 (Rule Sets)
 # ---------------------------------------------------
 # 这里定义的是规则集的下载与更新行为，Stash 会根据这里的配置去抓取 payload
-rule-providers:
-  local: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/local.yaml"}
-  apple: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/apple.yaml"}
-  microsoft: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/microsoft.yaml"}
-  cn-domain: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-domain.yaml"}
-  google: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/google.yaml"}
-  amazon: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/amazon.yaml"}
-  proxy: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/proxy.yaml"}
-  not-hk: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/not-hk.yaml"}
-  adblock: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/adblock.yaml"}
-  reject: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/reject.yaml"}
-  cn-ip: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-ip.yaml"}
+#rule-providers:
+#  local: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/local.yaml"}
+#  apple: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/apple.yaml"}
+#  microsoft: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/microsoft.yaml"}
+#  cn-domain: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-domain.yaml"}
+#  google: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/google.yaml"}
+#  amazon: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/amazon.yaml"}
+#  proxy: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/proxy.yaml"}
+#  not-hk: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/not-hk.yaml"}
+#  adblock: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/adblock.yaml"}
+#  reject: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/reject.yaml"}
+#  cn-ip: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-ip.yaml"}
 
 # ---------------------------------------------------
 # 3. 规则 (Rules)
 # ---------------------------------------------------
-rules:
+#rules:
   # [优先级最高] 拦截广告
-  - RULE-SET,adblock,REJECT
-  - RULE-SET,reject,REJECT
+#  - RULE-SET,adblock,REJECT
+#  - RULE-SET,reject,REJECT
 
   # [优先级中] 引用你自己的私有直连列表
-  - RULE-SET,local,DIRECT
-  - RULE-SET,apple,DIRECT
-  - RULE-SET,amazon,DIRECT
-  - RULE-SET,microsoft,DIRECT
-  - RULE-SET,cn-domain,DIRECT
-  - RULE-SET,google,节点选择
-  - RULE-SET,proxy,节点选择
-  - RULE-SET,not-hk,非香港节点
-  - RULE-SET,cn-ip,DIRECT
+#  - RULE-SET,local,DIRECT
+#  - RULE-SET,apple,DIRECT
+#  - RULE-SET,amazon,DIRECT
+#  - RULE-SET,microsoft,DIRECT
+#  - RULE-SET,cn-domain,DIRECT
+#  - RULE-SET,google,节点选择
+#  - RULE-SET,proxy,节点选择
+#  - RULE-SET,not-hk,非香港节点
+#  - RULE-SET,cn-ip,DIRECT
 
   # [常用分流] 社交与流媒体
   
   # [大陆分流] 绕过内地 IP
-  - RULE-SET,cn-ip,DIRECT
+#  - RULE-SET,cn-ip,DIRECT
   - GEOIP,CN,DIRECT
   
   # [兜底规则] 剩余所有流量
