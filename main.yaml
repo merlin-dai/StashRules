@@ -19,8 +19,8 @@ proxy-groups:
 # 2. 规则集配置 (Rule Sets)
 # ---------------------------------------------------
 # 这里定义的是规则集的下载与更新行为，Stash 会根据这里的配置去抓取 payload
-#rule-providers:
-#  local: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/local.yaml"}
+rule-providers:
+  local: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/local.yaml"}
 #  apple: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/apple.yaml"}
 #  microsoft: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/microsoft.yaml"}
 #  cn-domain: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://raw.githubusercontent.com/merlin-dai/clash-rules/refs/heads/main/cn-domain.yaml"}
