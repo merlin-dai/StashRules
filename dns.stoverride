@@ -7,17 +7,17 @@ dns: #!replace
   enhanced-mode: fake-ip           # 核心防泄漏：使用虚拟 IP 机制
   fake-ip-range: 198.18.0.1/16
   
-  # 1. 基础解析服务器：仅用于解析 DoH 域名及节点域名
+  # 默认 DNS，仅用于解析 DoH 域名
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
 
-  # 2. 默认解析服务器：处理所有未匹配的域名
+  # 本地 DNS，用于解析本地直接发起的 DNS 请求
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 
   # 3. 节点解析服务器：专门用于解析代理服务器的 IP 地址
   proxy-server-nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
