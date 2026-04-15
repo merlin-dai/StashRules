@@ -17,6 +17,14 @@ dns: #!replace
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 
+  nameserver-policy:
+    "geosite:geolocation-!cn":
+      - https://dns.google/dns-query
+      - https://1.1.1.1/dns-query
+
+    "geosite:apple":
+      - https://doh.dns.apple.com/dns-query
+
   # 3. 节点解析服务器：专门用于解析代理服务器的 IP 地址
   proxy-server-nameserver:
     - 8.8.8.8
