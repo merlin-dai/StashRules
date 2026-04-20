@@ -1,1 +1,5 @@
-payload:
+name: 自定义分流规则
+desc: 
+
+rules:
+  - DOMAIN-SUFFIX,stash.wa,Proxy
