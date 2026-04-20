@@ -1,5 +1,5 @@
 name: 自定义分流规则
-desc: 
+desc: 自定义网站分流规则
 
 rules:
   - DOMAIN-SUFFIX,stash.wa,Proxy
