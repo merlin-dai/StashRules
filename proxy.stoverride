@@ -2,4 +2,4 @@ name: 自定义网站分流规则
 desc: 为特定网站添加自定义分流策略，覆盖默认规则
 
 rules:
-  - DOMAIN-SUFFIX,stash.ws,Proxy
+  - DOMAIN-SUFFIX,translate.stash.ws,Proxy
