@@ -3,3 +3,4 @@ desc: 为特定网站添加自定义分流策略，覆盖默认规则
 
 rules:
   - DOMAIN-SUFFIX,translate.stash.ws,Proxy
+  - DOMAIN-SUFFIX,zoom.us,Proxy
