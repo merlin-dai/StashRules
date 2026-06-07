@@ -5,4 +5,4 @@ rules:
   - DOMAIN-SUFFIX,translate.stash.ws,Proxy
   - DOMAIN-SUFFIX,zoom.us,Proxy
   - DOMAIN-SUFFIX,fihtdc.com,Proxy
-  - DOMAIN-SUFFIX,speedtest.cn,Direct
+  - DOMAIN-SUFFIX,speedtest.cn,DIRECT
